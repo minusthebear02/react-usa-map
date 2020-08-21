@@ -24,11 +24,19 @@ class USAMap extends React.Component {
     return this.clickHandler;
   }
 
+  customAttrs = (state) => {
+    if (this.props.customize && this.props.customize[state] && this.props.customize[state].customAttrs) {
+      return [...this.props.customize[state].customAttrs]
+    } 
+    return []
+    
+  }
+
   buildPaths = () => {
     let paths = [];
     let dataStates = data();
     for (let stateKey in dataStates) {
-      const path = <USAState key={stateKey} stateName={dataStates[stateKey].name} dimensions={dataStates[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} />
+      const path = <USAState key={stateKey} stateName={dataStates[stateKey].name} dimensions={dataStates[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} {...this.customAttrs(stateKey)} />
       paths.push(path);
     };
     return paths;

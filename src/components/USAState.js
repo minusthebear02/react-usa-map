@@ -1,9 +1,9 @@
 import React from "react";
 
-const USAState = (props) => {
+const USAState = ({fill, dimensions, state, onClickState, stateName, ...customAttrs}) => {
   return (
-    <path d={props.dimensions} fill={props.fill} data-name={props.state} className={`${props.state} state`} onClick={props.onClickState}>
-      <title>{props.stateName}</title>
+    <path d={dimensions} fill={fill} data-name={state} data-label={label} className={`${state} state`} onClick={onClickState} {...customAttrs}>
+      <title>{stateName}</title>
     </path>
   );
 }

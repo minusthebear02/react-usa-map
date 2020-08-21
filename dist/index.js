@@ -49,6 +49,59 @@
     return _typeof(obj);
   }
 
+  function _extends() {
+    _extends = Object.assign || function (target) {
+      for (var i = 1; i < arguments.length; i++) {
+        var source = arguments[i];
+
+        for (var key in source) {
+          if (Object.prototype.hasOwnProperty.call(source, key)) {
+            target[key] = source[key];
+          }
+        }
+      }
+
+      return target;
+    };
+
+    return _extends.apply(this, arguments);
+  }
+
+  function _toConsumableArray(arr) {
+    return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+  }
+
+  function _nonIterableSpread() {
+    throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+  }
+
+  function _iterableToArray(iter) {
+    if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+  }
+
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+  }
+
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
+
+    return arr2;
+  }
+
   function _classCallCheck(instance, Constructor) {
     if (!(instance instanceof Constructor)) {
       throw new TypeError("Cannot call a class as a function");
@@ -201,19 +254,27 @@
         return _this.clickHandler;
       });
 
+      _defineProperty(_assertThisInitialized(_this), "customAttrs", function (state) {
+        if (_this.props.customize && _this.props.customize[state] && _this.props.customize[state].customAttrs) {
+          return _toConsumableArray(_this.props.customize[state].customAttrs);
+        }
+
+        return [];
+      });
+
       _defineProperty(_assertThisInitialized(_this), "buildPaths", function () {
         var paths = [];
         var dataStates = (0, _usaMapDimensions2["default"])();
 
         for (var stateKey in dataStates) {
-          var path = /*#__PURE__*/_react2["default"].createElement(_USAState2["default"], {
+          var path = /*#__PURE__*/_react2["default"].createElement(_USAState2["default"], _extends({
             key: stateKey,
             stateName: dataStates[stateKey].name,
             dimensions: dataStates[stateKey]["dimensions"],
             state: stateKey,
             fill: _this.fillStateColor(stateKey),
             onClickState: _this.stateClickHandler(stateKey)
-          });
+          }, _this.customAttrs(stateKey)));
 
           paths.push(path);
         }
