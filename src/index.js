@@ -59,8 +59,6 @@ class USAMap extends React.Component {
               className="DC1"
               fill={this.fillStateColor("DC1")}
               d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
-              data-party={this.customAttrs("DC")["data-party"]}
-              data-votes={this.customAttrs("DC")["data-votes"]}
             />
             <circle
               className="DC2"
@@ -73,6 +71,8 @@ class USAMap extends React.Component {
               cy="251.8"
               r="5"
               opacity="1"
+              data-party={this.customAttrs("DC")["data-party"]}
+              data-votes={this.customAttrs("DC")["data-votes"]}
             />
           </g>
         </g>

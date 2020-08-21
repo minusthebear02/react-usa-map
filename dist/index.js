@@ -267,9 +267,7 @@
         }, /*#__PURE__*/_react2["default"].createElement("path", {
           className: "DC1",
           fill: this.fillStateColor("DC1"),
-          d: "M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z",
-          "data-party": this.customAttrs("DC")["data-party"],
-          "data-votes": this.customAttrs("DC")["data-votes"]
+          d: "M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
         }), /*#__PURE__*/_react2["default"].createElement("circle", {
           className: "DC2",
           onClick: this.clickHandler,
@@ -280,7 +278,9 @@
           cx: "801.3",
           cy: "251.8",
           r: "5",
-          opacity: "1"
+          opacity: "1",
+          "data-party": this.customAttrs("DC")["data-party"],
+          "data-votes": this.customAttrs("DC")["data-votes"]
         }))));
       }
     }]);
