@@ -1,3 +1,5 @@
+"use strict";
+
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
     define(["exports", "react"], factory);
@@ -8,9 +10,9 @@
       exports: {}
     };
     factory(mod.exports, global.react);
-    global.USAState = mod.exports;
+    global.undefined = mod.exports;
   }
-})(this, function (exports, _react) {
+})(void 0, function (exports, _react) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
@@ -26,15 +28,14 @@
   }
 
   var USAState = function USAState(props) {
-    return _react2.default.createElement(
-      "path",
-      { d: props.dimensions, fill: props.fill, "data-name": props.state, className: props.state + " state", onClick: props.onClickState },
-      _react2.default.createElement(
-        "title",
-        null,
-        props.stateName
-      )
-    );
+    return /*#__PURE__*/_react2["default"].createElement("path", {
+      d: props.dimensions,
+      fill: props.fill,
+      "data-name": props.state,
+      className: "".concat(props.state, " state"),
+      onClick: props.onClickState
+    }, /*#__PURE__*/_react2["default"].createElement("title", null, props.stateName));
   };
-  exports.default = USAState;
+
+  exports["default"] = USAState;
 });

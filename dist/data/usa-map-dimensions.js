@@ -1,3 +1,5 @@
+"use strict";
+
 (function (global, factory) {
   if (typeof define === "function" && define.amd) {
     define(["exports"], factory);
@@ -8,14 +10,15 @@
       exports: {}
     };
     factory(mod.exports);
-    global.usaMapDimensions = mod.exports;
+    global.undefined = mod.exports;
   }
-})(this, function (exports) {
+})(void 0, function (exports) {
   "use strict";
 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+
   function data() {
     return {
       "AK": {
@@ -271,5 +274,5 @@
     };
   }
 
-  exports.default = data;
+  exports["default"] = data;
 });
