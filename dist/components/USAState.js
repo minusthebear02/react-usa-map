@@ -56,7 +56,6 @@
       d: dimensions,
       fill: fill,
       "data-name": state,
-      "data-label": label,
       className: "".concat(state, " state"),
       onClick: onClickState
     }, customAttrs), /*#__PURE__*/_react2["default"].createElement("title", null, stateName));
