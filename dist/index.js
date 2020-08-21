@@ -264,11 +264,11 @@
           className: "outlines"
         }, this.buildPaths(), /*#__PURE__*/_react2["default"].createElement("g", {
           className: "DC state"
-        }, /*#__PURE__*/_react2["default"].createElement("path", {
+        }, /*#__PURE__*/_react2["default"].createElement("path", _extends({
           className: "DC1",
           fill: this.fillStateColor("DC1"),
           d: "M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
-        }), /*#__PURE__*/_react2["default"].createElement("circle", {
+        }, this.customAttrs("DC"))), /*#__PURE__*/_react2["default"].createElement("circle", {
           className: "DC2",
           onClick: this.clickHandler,
           "data-name": "DC",
