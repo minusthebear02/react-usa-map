@@ -26,10 +26,10 @@ class USAMap extends React.Component {
 
   customAttrs = (state) => {
     if (this.props.customize && this.props.customize[state] && this.props.customize[state].customAttrs) {
-      return [...this.props.customize[state].customAttrs]
-    } 
-    return []
-    
+      return this.props.customize[state].customAttrs
+    }
+    return {}
+
   }
 
   buildPaths = () => {
