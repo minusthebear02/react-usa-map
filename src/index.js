@@ -48,7 +48,7 @@ class USAMap extends React.Component {
     for (let stateKey in dataStates) {
       const textPath = (
         <text dy="70" textLength="1200">
-          <textPath key={stateKey} xlink:href={`#${stateKey}-path`}>
+          <textPath key={stateKey} href={`#${stateKey}-path`}>
             {stateKey}
           </textPath>
         </text>
