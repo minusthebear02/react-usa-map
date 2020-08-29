@@ -36,26 +36,10 @@ class USAMap extends React.Component {
     let paths = [];
     let dataStates = data();
     for (let stateKey in dataStates) {
-      const path = <USAState key={stateKey} stateName={dataStates[stateKey].name} dimensions={dataStates[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} {...this.customAttrs(stateKey)} />
+      const path = <USAState key={stateKey} stateName={dataStates[stateKey].name} dimensions={dataStates[stateKey]["dimensions"]} state={stateKey} fill={this.fillStateColor(stateKey)} onClickState={this.stateClickHandler(stateKey)} {...this.customAttrs(stateKey)} x={this.props.customize[state].x} y={this.props.customize[state].y} />
       paths.push(path);
     };
     return paths;
-  };
-
-  buildTextPaths = () => {
-    let textPaths = [];
-    let dataStates = data();
-    for (let stateKey in dataStates) {
-      const textPath = (
-        <text dy="70" textLength="1200">
-          <textPath key={stateKey} href={`#${stateKey}-path`}>
-            {stateKey}
-          </textPath>
-        </text>
-      )
-      textPaths.push(textPath);
-    };
-    return textPaths;
   };
 
   render() {
@@ -68,33 +52,30 @@ class USAMap extends React.Component {
         viewBox="0 0 959 593"
       >
         <title>{this.props.title}</title>
-        <defs>
-          <g className="outlines">
-            {this.buildPaths()}
-            <g className="DC state">
-              <path
-                className="DC1"
-                fill={this.fillStateColor("DC1")}
-                d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
-              />
-              <circle
-                className="DC2"
-                onClick={this.clickHandler}
-                data-name={"DC"}
-                fill={this.fillStateColor("DC2")}
-                stroke="#FFFFFF"
-                strokeWidth="1.5"
-                cx="801.3"
-                cy="251.8"
-                r="5"
-                opacity="1"
-                data-party={this.customAttrs("DC")["data-party"]}
-                data-votes={this.customAttrs("DC")["data-votes"]}
-              />
-            </g>
+        <g className="outlines">
+          {this.buildPaths()}
+          <g className="DC state">
+            <path
+              className="DC1"
+              fill={this.fillStateColor("DC1")}
+              d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
+            />
+            <circle
+              className="DC2"
+              onClick={this.clickHandler}
+              data-name={"DC"}
+              fill={this.fillStateColor("DC2")}
+              stroke="#FFFFFF"
+              strokeWidth="1.5"
+              cx="801.3"
+              cy="251.8"
+              r="5"
+              opacity="1"
+              data-party={this.customAttrs("DC")["data-party"]}
+              data-votes={this.customAttrs("DC")["data-votes"]}
+            />
           </g>
-        </defs>
-        {this.buildTextPaths()}
+        </g>
       </svg>
     );
   }
