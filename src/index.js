@@ -42,6 +42,16 @@ class USAMap extends React.Component {
     return paths;
   };
 
+  buildText = () => {
+    let names = [];
+    let dataStates = data();
+    for (let stateKey in dataStates) {
+      const name = <text key={stateKey} style={{ position: "absolute", left: this.props.customize[stateKey].x, top: this.props.customize[stateKey].y }}>{stateKey}</text>;
+      names.push(name);
+    };
+    return names;
+  };
+
   render() {
     return (
       <svg
@@ -76,6 +86,7 @@ class USAMap extends React.Component {
             />
           </g>
         </g>
+        {this.buildText()}
       </svg>
     );
   }
