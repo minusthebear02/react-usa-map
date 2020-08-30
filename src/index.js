@@ -46,7 +46,7 @@ class USAMap extends React.Component {
     let names = [];
     let dataStates = data();
     for (let stateKey in dataStates) {
-      const name = <text key={stateKey} style={{ position: "absolute", left: this.props.customize[stateKey].x, top: this.props.customize[stateKey].y }}>{stateKey}</text>;
+      const name = <text key={stateKey} x={this.props.customize[stateKey].x} y={this.props.customize[stateKey].y }>{stateKey}</text>;
       names.push(name);
     };
     return names;
