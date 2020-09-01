@@ -46,7 +46,7 @@ class USAMap extends React.Component {
     let names = [];
     let dataStates = data();
     for (let stateKey in dataStates) {
-      const name = <foreignObject key={stateKey} className={`state-${stateKey}`} data-party={this.props.customize[stateKey].customAttrs["data-party"]} width="25" height="30" x={this.props.customize[stateKey].x} y={this.props.customize[stateKey].y} onClick={this.stateClickHandler(stateKey)}><div className="state-name" >{stateKey}<br />{this.props.customize[stateKey].numVotes}</div></foreignObject>;
+      const name = <foreignObject key={stateKey} className={`state-${stateKey}`} width="25" height="30" x={this.props.customize[stateKey].x} y={this.props.customize[stateKey].y} ><div className={`state-name state-${stateKey}`} onClick={this.stateClickHandler(stateKey)} data-party={this.props.customize[stateKey].customAttrs["data-party"]} >{stateKey}<br />{this.props.customize[stateKey].numVotes}</div></foreignObject>;
       names.push(name);
     };
     return names;
