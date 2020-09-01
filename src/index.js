@@ -71,9 +71,9 @@ class USAMap extends React.Component {
               d="M801.8,253.8 l-1.1-1.6 -1-0.8 1.1-1.6 2.2,1.5z"
             />
             <circle
-              className="DC2"
+              className="DC"
               onClick={this.clickHandler}
-              data-name={"DC"}
+              data-state={"DC"}
               fill={this.fillStateColor("DC2")}
               stroke="#FFFFFF"
               strokeWidth="1.5"
